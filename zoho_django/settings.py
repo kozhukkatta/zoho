@@ -86,8 +86,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'infoxtec_zohodb',
-        'USER':'infoxtec_zohodb',
-        'PASSWORD':'zohodbzohodb',
+        'USER':'root',
+        'PASSWORD':'',
         'HOST':'localhost',
         'PORT':'3306',
     }

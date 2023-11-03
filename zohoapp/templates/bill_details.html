@@ -133,20 +133,22 @@ searchInput.addEventListener("input", function () {
                 <th style="color: white;">Due Date</th>
                 <th style="color: white;">Vendor Name</th>
                 {% comment %} <th style="color: white;">Email</th> {% endcomment %}
-                <th style="color: white;">Bill Amount</th>
+                <th style="color: white;">Purchase Bill Amount</th>
+                <th style="color: white;">Recurring Bill Amount</th>
+                <th style="color: white;">Credit Bill Amount</th>
                 <th style="color: white;">Balance</th>
             </tr>
         </thead>
         <tbody>
           
-            {% for i in purchasebill %}
+            {% comment %} {% for i in purchasebill %}
              
             <tr>         
               <td style="color: white;">{{ i.bill_no }}</td>
               <td style="color: white;">{{ i.bill_date }}</td>
               <td style="color: white;">{{ i.due_date }}</td>
               <td style="color: white;">{{ i.vendor_name }}</td>
-              {% comment %} <td style="color: white;">{{ i.vendor_email }}</td> {% endcomment %}
+              <td style="color: white;">{{ i.vendor_email }}</td>
               <td style="color: white;">{{ i.total }}</td>
 
                 {% for vendor_name,bal in vendors_balance.items %}
@@ -158,7 +160,7 @@ searchInput.addEventListener("input", function () {
                 {% endfor %} 
 
             </tr>
-            {% endfor %}
+            {% endfor %} {% endcomment %}
 
 
             {% comment %} {% for i in recurringbill %}
