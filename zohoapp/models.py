@@ -1170,7 +1170,7 @@ class Credits_doc_upload_table(models.Model):
 #-------------------------------------------------sumayya--------purchase bills------------------------------------------
 class PurchaseBills(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE,null=True,blank=True)
-    cusname=models.ForeignKey(customer,on_delete=models.CASCADE,null=True)
+    cusname=models.ForeignKey(customer,on_delete=models.CASCADE,null=True) 
     customer_name = models.CharField(max_length=100,null=True,blank=True)
     customer_email = models.CharField(max_length=100,null=True,blank=True)
     place_of_supply = models.CharField(max_length=100,null=True,blank=True)

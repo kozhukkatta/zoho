@@ -141,12 +141,12 @@ searchInput.addEventListener("input", function () {
         </thead>
         <tbody>
           
-            {% comment %} {% for i in purchasebill %}
+           {% for i in purchasebill %}
              
             <tr>         
               <td style="color: white;">{{ i.bill_no }}</td>
               <td style="color: white;">{{ i.bill_date }}</td>
-              <td style="color: white;">{{ i.due_date }}</td>
+              <td style="color: white;">{{ i.due_date }}</td> 
               <td style="color: white;">{{ i.vendor_name }}</td>
               <td style="color: white;">{{ i.vendor_email }}</td>
               <td style="color: white;">{{ i.total }}</td>
@@ -160,7 +160,7 @@ searchInput.addEventListener("input", function () {
                 {% endfor %} 
 
             </tr>
-            {% endfor %} {% endcomment %}
+            {% endfor %} 
 
 
             {% comment %} {% for i in recurringbill %}
