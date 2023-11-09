@@ -128,15 +128,12 @@ searchInput.addEventListener("input", function () {
       <table class="table table-bordered table-striped mt-4" id="data-table">
         <thead class="text-white">
             <tr>
-                <th style="color: white;">Bill Number</th>
-                <th style="color: white;">Bill Date</th>
-                <th style="color: white;">Due Date</th>
-                <th style="color: white;">Vendor Name</th>
-                 <th style="color: white;">Email</th>
-                <th style="color: white;">Purchase Bill Amount</th>
-                <th style="color: white;">Recurring Bill Amount</th>
-                <th style="color: white;">Credit Bill Amount</th>
-                <th style="color: white;">Balance</th>
+              <th style="color: white;">Bill Number</th>
+              <th style="color: white;">Bill Date</th>
+              <th style="color: white;">Due Date</th>
+              <th style="color: white;">Vendor Name</th>
+              <th style="color: white;">Email</th>
+              <th style="color: white;">Bill Amount</th>
             </tr>
         </thead>
         <tbody>
@@ -150,31 +147,20 @@ searchInput.addEventListener("input", function () {
               <td style="color: white;">{{ i.vendor_name }}</td>
               <td style="color: white;">{{ i.vendor_email }}</td>
               <td style="color: white;">{{ i.total }}</td>
-
-                {% for vendor_name,bal in vendors_balance.items %}
-                    {% if vendor_name == i.vendor_name %}
-                      <td style="color: white;">
-                        {{bal}} 
-                      </td>
-                    {% endif %}             
-                {% endfor %} 
-
             </tr>
             {% endfor %} 
 
 
-            {% comment %} {% for i in recurringbill %}
+             {% for i in recurringbill %}
             <tr>
               <td style="color: white;">{{ i.bill_no }}</td>
               <td style="color: white;">{{ i.start_date }}</td>
               <td style="color: white;">{{ i.end_date }}</td>
               <td style="color: white;">{{ i.vendor_name }}</td>
-              {% comment %} <td style="color: white;">{{ i.vendor_email }}</td> 
+              <td style="color: white;">{{ i.vendor_email }}</td> 
               <td style="color: white;">{{ i.grand_total }}</td>
-              <td style="color: white;">0</td>
             </tr>
             {% endfor %}
-            <h1>{{cur}}</h1> {% endcomment %}
         </tbody>
       </table> 
       <div id="total-bill-amount" class="mt-3" style="color: white;"></div>
