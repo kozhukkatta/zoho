@@ -14579,24 +14579,8 @@ def bill_details(request):
     company=company_details.objects.get(user=request.user)
     purchasebill=PurchaseBills.objects.filter(user=request.user)
     recurringbill=recurring_bills.objects.filter(user=request.user)
-    vendors_balance = {}
-    payments = payment_made.objects.filter(user=request.user)
-    
-    payments_all = payment_made.objects.all()
-    for payment in payments: 
-        vendor_name = payment.vendor.first_name
-        currentbaln=payment.current_balance
-        print(currentbaln)
-        if vendor_name not in vendors_balance:
-            vendors_balance[vendor_name] = currentbaln
-        else:
-            vendors_balance[vendor_name] += currentbaln
-    for bill in purchasebill:
-        vendor_name = bill.vendor_name
-        print(vendor_name)
-       
-    print(vendors_balance)
-    return render(request, 'bill_details.html', {'company':company,'purchasebill':purchasebill,'recurringbill':recurringbill,'vendors_balance':vendors_balance})
+    vendorcredits=Vendor_Credits.objects.filter(user=request.user)
+    return render(request, 'bill_details.html', {'company':company,'purchasebill':purchasebill,'recurringbill':recurringbill,'vendorcredits':vendorcredits})
 
 def vendor_customize_report(request):
     company_data = company_details.objects.get(user=request.user)
