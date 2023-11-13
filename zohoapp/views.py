@@ -14579,9 +14579,7 @@ def bill_details(request):
     company=company_details.objects.get(user=request.user)
     purchasebill=PurchaseBills.objects.filter(user=request.user)
     recurringbill=recurring_bills.objects.filter(user=request.user)
-    name=recurringbill.vendor_name
-    vname=vendor_table.objects.filter(first_name last_name=name)
-    vendorcredits=Vendor_Credits.objects.filter(user=request.user)
+    #vendorcredits=Vendor_Credits.objects.filter(user=request.user)
     return render(request, 'bill_details.html', {'company':company,'purchasebill':purchasebill,'recurringbill':recurringbill,'vendorcredits':vendorcredits})
 
 def vendor_customize_report(request):
