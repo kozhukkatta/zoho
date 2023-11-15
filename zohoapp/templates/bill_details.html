@@ -162,7 +162,7 @@ searchInput.addEventListener("input", function () {
             </tr>
             {% endfor %}
 
-            {% for i in vendorcredits %}
+            {% comment %} {% for i in vendorcredits %}
             <tr>
               <td style="color: white;">{{ i.order_no }}</td>
               <td style="color: white;">{{ i.start_date }}</td>
@@ -171,7 +171,7 @@ searchInput.addEventListener("input", function () {
               <td style="color: white;">{{ i.vendor_email }}</td> 
               <td style="color: white;">{{ i.grandtotal }}</td>
             </tr>
-            {% endfor %}
+            {% endfor %} {% endcomment %}
 
         </tbody>
       </table> 
